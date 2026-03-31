@@ -1,0 +1,121 @@
+
+type = string-attribute
+name = HISTORY_NOTE
+count = 1764
+'[xl872@yulab2: Wed May 21 12:21:12 2025] to3d -omri -prefix 2025051802Na.155.an200epi -session /home/xl872/Documents/mouse_data/2025051802Na/200_proc/M1T2/ -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:/home/xl872/Documents/raw_data/2025051802Na/155/pdata/1/2dseq\n[xl872@yulab2: Thu May 22 10:40:07 2025] {AFNI_24.0.09:linux_centos_7_64} 3dMean -prefix formask 2025051802Na.155.an200epi+orig.BRIK 2025051802Na.155.an200epi+orig.HEAD 2025051802Na.156.an200epi+orig.BRIK 2025051802Na.156.an200epi+orig.HEAD 2025051802Na.157.an200epi+orig.BRIK 2025051802Na.157.an200epi+orig.HEAD 2025051802Na.158.an200epi+orig.BRIK 2025051802Na.158.an200epi+orig.HEAD 2025051802Na.159.an200epi+orig.BRIK 2025051802Na.159.an200epi+orig.HEAD 2025051802Na.160.an200epi+orig.BRIK 2025051802Na.160.an200epi+orig.HEAD 2025051802Na.161.an200epi+orig.BRIK 2025051802Na.161.an200epi+orig.HEAD 2025051802Na.162.an200epi+orig.BRIK 2025051802Na.162.an200epi+orig.HEAD 2025051802Na.163.an200epi+orig.BRIK 2025051802Na.163.an200epi+orig.HEAD 2025051802Na.164.an200epi+orig.BRIK 2025051802Na.164.an200epi+orig.HEAD 2025051802Na.165.an200epi+orig.BRIK 2025051802Na.165.an200epi+orig.HEAD 2025051802Na.166.an200epi+orig.BRIK 2025051802Na.166.an200epi+orig.HEAD 2025051802Na.167.an200epi+orig.BRIK 2025051802Na.167.an200epi+orig.HEAD 2025051802Na.168.an200epi+orig.BRIK 2025051802Na.168.an200epi+orig.HEAD 2025051802Na.169.an200epi+orig.BRIK 2025051802Na.169.an200epi+orig.HEAD 2025051802Na.170.an200epi+orig.BRIK 2025051802Na.170.an200epi+orig.HEAD 2025051802Na.171.an200epi+orig.BRIK 2025051802Na.171.an200epi+orig.HEAD 2025051802Na.172.an200epi+orig.BRIK 2025051802Na.172.an200epi+orig.HEAD 2025051802Na.173.an200epi+orig.BRIK 2025051802Na.173.an200epi+orig.HEAD~
+
+type = string-attribute
+name = TYPESTRING
+count = 15
+'3DIM_HEAD_ANAT~
+
+type = string-attribute
+name = IDCODE_STRING
+count = 27
+'XYZ_sP5yOC-2X9CVLKkFJittjw~
+
+type = string-attribute
+name = IDCODE_DATE
+count = 25
+'Thu May 22 10:40:07 2025~
+
+type = integer-attribute
+name = SCENE_DATA
+count = 8
+ 0 10 0 -999 -999
+ -999 -999 -999
+
+type = string-attribute
+name = LABEL_1
+count = 5
+'zyxt~
+
+type = string-attribute
+name = LABEL_2
+count = 5
+'zyxt~
+
+type = string-attribute
+name = DATASET_NAME
+count = 5
+'zyxt~
+
+type = integer-attribute
+name = ORIENT_SPECIFIC
+count = 3
+ 0 5 3
+
+type  = float-attribute
+name  = ORIGIN
+count = 3
+           -3.9           2.85             -0
+
+type  = float-attribute
+name  = DELTA
+count = 3
+            0.3           -0.3            0.3
+
+type  = float-attribute
+name  = IJK_TO_DICOM
+count = 12
+            0.3              0              0           -3.9              0
+              0            0.3              0              0           -0.3
+              0           2.85
+
+type  = float-attribute
+name  = IJK_TO_DICOM_REAL
+count = 12
+            0.3              0              0           -3.9              0
+              0            0.3             -0              0           -0.3
+              0           2.85
+
+type  = float-attribute
+name  = BRICK_STATS
+count = 2
+       2361.737       26384.95
+
+type = integer-attribute
+name = DATASET_RANK
+count = 8
+ 3 1 0 0 0
+ 0 0 0
+
+type = integer-attribute
+name = DATASET_DIMENSIONS
+count = 5
+ 27 20 20 0 0
+
+type = integer-attribute
+name = BRICK_TYPES
+count = 1
+ 1
+
+type  = float-attribute
+name  = BRICK_FLOAT_FACS
+count = 1
+      0.8052292
+
+type = string-attribute
+name = BRICK_LABS
+count = 3
+'#0~
+
+type = string-attribute
+name = BRICK_KEYWORDS
+count = 1
+'~
+
+type = string-attribute
+name = TEMPLATE_SPACE
+count = 5
+'ORIG~
+
+type = integer-attribute
+name = INT_CMAP
+count = 1
+ 0
+
+type = string-attribute
+name = BYTEORDER_STRING
+count = 10
+'LSB_FIRST~
