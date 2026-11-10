@@ -1,0 +1,308 @@
+# to3d commands used to convert the Bruker 2dseq images of the released datasets to AFNI format.
+# One block per dataset. Paths are replaced by <RAW>, the folder that holds the Bruker sessions
+# (the Dataverse archives unpack to it). The commands are as recorded in each dataset's header
+# before release. Later AFNI steps for the DWI datasets are in proc613/627/644_to3d.sh.
+# Datasets that are not listed here (allave, allave_t, ROI*, ADC*, T2*, R2*, map_*) were not made by to3d.
+
+# dataset: 2025051802Na.155.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.155.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/155/pdata/1/2dseq
+
+# dataset: 2025051802Na.156.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.156.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/156/pdata/1/2dseq
+
+# dataset: 2025051802Na.157.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.157.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/157/pdata/1/2dseq
+
+# dataset: 2025051802Na.158.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.158.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/158/pdata/1/2dseq
+
+# dataset: 2025051802Na.159.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.159.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/159/pdata/1/2dseq
+
+# dataset: 2025051802Na.160.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.160.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/160/pdata/1/2dseq
+
+# dataset: 2025051802Na.161.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.161.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/161/pdata/1/2dseq
+
+# dataset: 2025051802Na.162.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.162.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/162/pdata/1/2dseq
+
+# dataset: 2025051802Na.163.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.163.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/163/pdata/1/2dseq
+
+# dataset: 2025051802Na.164.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.164.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/164/pdata/1/2dseq
+
+# dataset: 2025051802Na.165.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.165.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/165/pdata/1/2dseq
+
+# dataset: 2025051802Na.166.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.166.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/166/pdata/1/2dseq
+
+# dataset: 2025051802Na.167.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.167.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/167/pdata/1/2dseq
+
+# dataset: 2025051802Na.168.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.168.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/168/pdata/1/2dseq
+
+# dataset: 2025051802Na.169.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.169.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/169/pdata/1/2dseq
+
+# dataset: 2025051802Na.170.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.170.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/170/pdata/1/2dseq
+
+# dataset: 2025051802Na.171.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.171.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/171/pdata/1/2dseq
+
+# dataset: 2025051802Na.172.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.172.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/172/pdata/1/2dseq
+
+# dataset: 2025051802Na.173.an200epi+orig (data/M1 zip already in the repo)
+to3d -omri -prefix 2025051802Na.173.an200epi -view orig -xFOV 4.05R-L -yFOV 3.00S-I -zFOV A-P -skip_outliers 3D:0:0:27:20:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/173/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.61.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.61.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/61/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.62.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.62.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/62/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.63.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.63.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/63/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.64.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.64.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/64/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.65.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.65.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/65/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.66.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.66.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/66/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.67.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.67.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/67/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.68.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.68.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/68/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.69.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.69.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/69/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.70.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.70.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/70/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.71.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.71.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/71/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.72.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.72.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/72/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.73.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.73.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/73/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.74.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.74.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/74/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.75.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.75.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/75/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.76.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.76.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/76/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.77.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.77.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/77/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.78.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.78.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/78/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.79.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.79.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 4.00A-P -skip_outliers 3D:0:0:16:16:20:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/79/pdata/1/2dseq
+
+# dataset: 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.80.an200epi+orig (data/M3 zip already in the repo)
+to3d -omri -prefix 20250518_144207_Mouse_23Naplus1_05182025_02_1_66.80.an200epi -view orig -xFOV 4.80R-L -yFOV 4.80S-I -zFOV 4.80A-P -skip_outliers 3D:0:0:64:64:64:<RAW>/20250518_144207_Mouse_23Naplus1_05182025_02_1_66/80/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.141.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.141.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:128:128:128:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/141/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.142.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.142.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/142/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.143.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.143.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/143/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.144.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.144.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/144/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.145.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.145.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/145/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.146.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.146.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/146/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.147.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.147.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/147/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.148.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.148.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/148/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.149.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.149.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/149/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.150.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.150.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/150/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.151.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.151.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/151/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.152.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.152.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/152/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.153.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.153.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/153/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.154.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.154.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/154/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.155.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.155.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/155/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.156.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.156.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/156/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.157.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.157.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/157/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.158.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.158.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/158/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.159.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.159.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/159/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.160.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.160.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:16:16:16:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/160/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.164.an200epi+orig (Na23_scan142-160_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.164.an200epi -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/164/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.175.dif+orig (DWI_scan175_afni.zip)
+to3d -time:zt 40 8 500 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.175.dif -view orig -xFOV 3.20R-L -yFOV 3.20S-I -zFOV 3.20A-P -skip_outliers 3D:0:0:40:40:320:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/175/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.627.dif+orig (DWI_scan627_afni.zip)
+to3d -time:zt 81 8 500 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.627.dif_rsp -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 4.05P-A -skip_outliers 3D:0:0:60:60:648:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/627/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.613.dif+orig (DWI_scan613_afni.zip)
+to3d -time:zt 80 7 500 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.613.dif_asl -view orig -xFOV 3.20A-P -yFOV 3.20S-I -zFOV 4.00L-R -skip_outliers 3D:0:0:64:64:560:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/613/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.402.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.402.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/402/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.403.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.403.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/403/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.404.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.404.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/404/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.405.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.405.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/405/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.406.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.406.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/406/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.407.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.407.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/407/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.408.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.408.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/408/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.409.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.409.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/409/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.410.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.410.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/410/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.411.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.411.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/411/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.412.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.412.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/412/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.413.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.413.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/413/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.414.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.414.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/414/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.415.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.415.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/415/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.416.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.416.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/416/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.417.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.417.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/417/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.418.an200epi+orig (Na23_scan402-418_afni.zip)
+to3d -time:zt 20 6 100 zero -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.418.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:120:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/418/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.273.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.273.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/273/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.274.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.274.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/274/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.275.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.275.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/275/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.276.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.276.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/276/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.277.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.277.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/277/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.278.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.278.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/278/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.279.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.279.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/279/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.280.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.280.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/280/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.281.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.281.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/281/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.282.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.282.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/282/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.283.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.283.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/283/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.284.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.284.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/284/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.285.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.285.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/285/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.286.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.286.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/286/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.287.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.287.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/287/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.288.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.288.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/288/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.289.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.289.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/289/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.290.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.290.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/290/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.291.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.291.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/291/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.292.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.292.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/292/pdata/1/2dseq
+
+# dataset: 20250801_201306_Mouse_23Naplus1_08012025_1_81.293.an200epi+orig (Na23_scan273-293_afni.zip)
+to3d -omri -prefix 20250801_201306_Mouse_23Naplus1_08012025_1_81.293.an200epi -view orig -xFOV 3.00R-L -yFOV 3.00S-I -zFOV 3.00A-P -skip_outliers 3D:0:0:20:20:20:<RAW>/20250801_201306_Mouse_23Naplus1_08012025_1_81/293/pdata/1/2dseq
