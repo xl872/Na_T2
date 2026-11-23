@@ -2,14 +2,14 @@ Yu G, Liu X, ... Zhou XA. *High-Field Multinuclear MRI Reveals Sodium Relaxation
 
 ## Folders
 
-- `Fig2/`: scripts and data for Fig. 2
-- `Fig3/`: scripts, data and results for Fig. 3 and Supplementary Tables 1-2
-- `Fig4/`: scripts, data and results for Fig. 4 and Supplementary Tables 3-5
-- `Fig5/`: scripts, data and results for Fig. 5 and Supplementary Table 6
+- `Fig1/`: scripts and data for Fig. 1
+- `Fig2/`: scripts, data and results for Fig. 2 and Supplementary Tables 1-2
+- `Fig3/`: scripts, data and results for Fig. 3 and Supplementary Tables 3-5
+- `Fig4/`: scripts, data and results for Fig. 4 and Supplementary Table 6
 - `conversion/`: conversion of the Bruker data to AFNI format
 - `helper/`: shared MATLAB function
 
-The existing `scripts/T2estimate_M1.m`, `scripts/T2estimate_M3.m`, `data/M1` and `data/M3` stay where they are; Fig. 4 reads `data/M1` and `data/M3`.
+The existing `scripts/T2estimate_M1.m`, `scripts/T2estimate_M3.m`, `data/M1` and `data/M3` stay where they are; Fig. 3 reads `data/M1` and `data/M3`.
 
 ## Software
 

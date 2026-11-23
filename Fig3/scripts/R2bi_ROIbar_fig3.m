@@ -1,6 +1,6 @@
-% Fig. 4 add-on: R2 of the voxel-wise bi-exponential T2* fit within the ROI shown on the maps
+% Fig. 3 add-on: R2 of the voxel-wise bi-exponential T2* fit within the ROI shown on the maps
 % for organoid #3 (M1) and #4 (M3).
-% Dots = individual ROI voxels. A box plot of the same voxels is written as R2bi_ROIbox_fig4.
+% Dots = individual ROI voxels. A box plot of the same voxels is written as R2bi_ROIbox_fig3.
 % Needs ROI_T2bi_R2stats.mat in each folder, written by the last section of
 % T2estimate_M1T2.m and T2estimate_M3T2.m (R2 = gof.rsquare from [result,gof]=fit(...)).
 cd(fullfile(fileparts(mfilename('fullpath')),'..','..','data'));   % release layout: run in the dataset folder
@@ -25,8 +25,8 @@ errorbar(1:2,mu,se,'k','LineStyle','none','LineWidth',2,'CapSize',12);
 xticks(1:2); xticklabels(labels); xlim([0.4 2.6]); ylim([0 1]); box off
 ylabel('R^2 (bi-exponential fit)')
 fontsize(gcf,fs,"points"); styleAx(gca)
-print(gcf,[pwd,'/R2bi_ROIbar_fig4.jpg'],'-djpeg','-r300');
-print(gcf,[pwd,'/R2bi_ROIbar_fig4.eps'],'-depsc','-r300');
+print(gcf,[pwd,'/R2bi_ROIbar_fig3.jpg'],'-djpeg','-r300');
+print(gcf,[pwd,'/R2bi_ROIbar_fig3.eps'],'-depsc','-r300');
 
 % box plot of the same voxels (box = 25-75%, line = median, whiskers = 1.5 IQR, dots = voxels)
 figure(Position=[100 100 340 340],Color='w');
@@ -38,8 +38,8 @@ xticks(1:2); xticklabels(labels); xlim([0.4 2.6]); ylim([0.9 1]); box off
 ylabel('Voxel-wise R^2')
 fontsize(gcf,fs,"points"); styleAx(gca)
 for f=1:2, fprintf('%s: R2 median = %.4f, 25-75%% = [%.4f %.4f]\n',labels{f},median(R2all{f}),prctile(R2all{f},[25 75])); end
-print(gcf,[pwd,'/R2bi_ROIbox_fig4.jpg'],'-djpeg','-r300');
-print(gcf,[pwd,'/R2bi_ROIbox_fig4.eps'],'-depsc','-r300');
+print(gcf,[pwd,'/R2bi_ROIbox_fig3.jpg'],'-djpeg','-r300');
+print(gcf,[pwd,'/R2bi_ROIbox_fig3.eps'],'-depsc','-r300');
 
 %% local functions
 function styleAx(ax)
