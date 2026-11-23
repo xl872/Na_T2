@@ -1,5 +1,5 @@
 %% =====================================================================
-%  Fig. 3C panel (Fig. 3C of the paper):  per organoid  [ADC map] [ADC on the anatomy + strip ROI] [signal decay + ADC fit per cell]
+%  Fig. 2C panel (Fig. 2C of the paper):  per organoid  [ADC map] [ADC on the anatomy + strip ROI] [signal decay + ADC fit per cell]
 %
 %  The masks are the saved datasets ROI_ADCstrip+orig in each dataset folder (1 / 2 / 3 = cell 1 / 2 / 3).
 %
@@ -14,8 +14,8 @@
 %           sagittal : across = A->P, down = S->I, slices counted L->R  -> 613New sagittal 31 = array index i = 80-31 = 49
 %           coronal  : across = R->L, down = S->I, slices counted A->P  -> 627    coronal  40 = array index k = 41
 %
-%  OUTPUTS (200_proc)      ADCstrip_Fig3C<tag>.jpg / .eps, ADCstrip_Fig3C<tag>_cells.csv (fit per cell),
-%                          ADCstrip_Fig3C<tag>_decay.csv (mean, SE, n per cell and b value)      (<tag> = '' for 627 | '_175')
+%  OUTPUTS (200_proc)      ADCstrip_Fig2C<tag>.jpg / .eps, ADCstrip_Fig2C<tag>_cells.csv (fit per cell),
+%                          ADCstrip_Fig2C<tag>_decay.csv (mean, SE, n per cell and b value)      (<tag> = '' for 627 | '_175')
 %  =====================================================================
 cd(fullfile(fileparts(mfilename('fullpath')),'..','data'));   % release layout: run in the dataset folder
 clc; clear; close all;
@@ -42,7 +42,7 @@ mapModel  = 'fit';          % 'fit'  : ADC map of the displayed slice fitted her
 bMax      = Inf;            % use only b values <= bMax in the fits
 smoothSigma = 0.5;          % 3-D Gaussian smoothing of every b volume before the fits, as in myADCProt.m (0 = none).
                             % Neighbouring voxels share signal after smoothing, so the SE bars are somewhat too small.
-axisDir   = 'ij';           % 'ij' = panel drawn as the AFNI viewer draws it (published Fig. 3C); 'xy' = upside down
+axisDir   = 'ij';           % 'ij' = panel drawn as the AFNI viewer draws it (published Fig. 2C); 'xy' = upside down
 marginMM  = 0.5;            % field of view: organoid ROI box of the slice stack + this margin (mm)
 ovAlpha   = 0.6;            % opacity of the ADC colours on the anatomy (middle column)
 showCellNumbers = false;    % true: write 1 2 3 beside the cells on the map (the dashed outline colours = the curve colours either way)
@@ -133,13 +133,13 @@ for o = 1:numel(org)
 end
 T = cell2table(rows, 'VariableNames', {'organoid','folder','scan','afniView','afniSlice','cell','nVoxels','ADCmap_mean_um2s','ADCmap_std_um2s','ADCmap_R2_mean','ADCmap_R2_std', ...
                'ADCfit_um2s','ADCfit_1e-4mm2s','ADCfit_CI95lo','ADCfit_CI95hi','A_plateau','C_amplitude','R2'});
-writetable(T, fullfile(base,['ADCstrip_Fig3C' outTag '_cells.csv']));
-writetable(cell2table(drow, 'VariableNames', {'organoid','cell','b_s_mm2','meanSignal','SE','nVoxels','usedInFit'}), fullfile(base,['ADCstrip_Fig3C' outTag '_decay.csv']));
-fprintf('\n  wrote ADCstrip_Fig3C%s_cells.csv and ADCstrip_Fig3C%s_decay.csv\n', outTag, outTag);
+writetable(T, fullfile(base,['ADCstrip_Fig2C' outTag '_cells.csv']));
+writetable(cell2table(drow, 'VariableNames', {'organoid','cell','b_s_mm2','meanSignal','SE','nVoxels','usedInFit'}), fullfile(base,['ADCstrip_Fig2C' outTag '_decay.csv']));
+fprintf('\n  wrote ADCstrip_Fig2C%s_cells.csv and ADCstrip_Fig2C%s_decay.csv\n', outTag, outTag);
 
 %% ---------------- 2. figure ------------------------------------------------------------
 nO = numel(org);  J = jet(256);
-figure('Name','ADC strip (Fig. 3C style)','Position',[40 40 1250 400*nO],'Color','w');
+figure('Name','ADC strip (Fig. 2C style)','Position',[40 40 1250 400*nO],'Color','w');
 for o = 1:nO
     r = R(o);  lim = r.lim;
     cidx = min(256, max(1, round((r.adc - lim(1))/diff(lim)*255) + 1));  C = reshape(J(cidx(:),:), [size(r.adc) 3]);
@@ -186,9 +186,9 @@ end
 fontsize(gcf,fs,"points")
 set(findall(gcf,'-property','FontName'),'FontName','Arial');  set(findall(gcf,'-property','FontWeight'),'FontWeight','bold');
 for a = findall(gcf,'Type','axes')', a.Toolbar.Visible = 'off'; end      % otherwise the axes toolbar icons can end up in the exported image
-print(gcf, fullfile(base,['ADCstrip_Fig3C' outTag '.jpg']), '-djpeg', '-r300');
-print(gcf, fullfile(base,['ADCstrip_Fig3C' outTag '.eps']), '-depsc', '-r300');
-fprintf('  wrote ADCstrip_Fig3C%s.jpg / .eps\n', outTag);
+print(gcf, fullfile(base,['ADCstrip_Fig2C' outTag '.jpg']), '-djpeg', '-r300');
+print(gcf, fullfile(base,['ADCstrip_Fig2C' outTag '.eps']), '-depsc', '-r300');
+fprintf('  wrote ADCstrip_Fig2C%s.jpg / .eps\n', outTag);
 
 
 %% ================= local functions ===================================================

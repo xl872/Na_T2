@@ -1,29 +1,29 @@
 %% =====================================================================
-%  Fig. 3D remake: ADC of the fast / slow diffusion ROI of 4 organoids, from
-%  Fig3D_input_signals.csv (mean ROI signal per effective b value, 2 ROIs per organoid).
+%  Fig. 2D remake: ADC of the fast / slow diffusion ROI of 4 organoids, from
+%  Fig2D_input_signals.csv (mean ROI signal per effective b value, 2 ROIs per organoid).
 %
-%  The fit reproduces the typed ADC values in Fig3D_input_sheetADC.csv exactly for Organoid 1 and 4; for Organoid 2 and 3
+%  The fit reproduces the typed ADC values in Fig2D_input_sheetADC.csv exactly for Organoid 1 and 4; for Organoid 2 and 3
 %         the typed values differ a little (printed below).
 %
 %  OUTPUTS (this folder)
-%         Fig3D_ADC_table.csv / .xlsx       ADC (10^-4 mm^2/s, 95% CI) and R^2 of every fit (fast and slow of each organoid)
-%         Fig3D_ADCfit_Organoid<n>.jpg/.eps  signal decay + fit, fast (blue) and slow (red) ROI, one figure per organoid
-%         Fig3D_ADCfit_all.jpg/.eps         the 4 fits side by side
-%         Fig3D_ADCbar.jpg/.eps             bar = mean, error bar = SEM, dots = organoids, paired t-test fast vs slow
-%         Fig3D_ADCR2box.jpg/.eps           box plot of the fit R^2 (fast blue / slow red, as the bar plot), dots = organoids
-%  The script changes to data/Fig3D itself.
+%         Fig2D_ADC_table.csv / .xlsx       ADC (10^-4 mm^2/s, 95% CI) and R^2 of every fit (fast and slow of each organoid)
+%         Fig2D_ADCfit_Organoid<n>.jpg/.eps  signal decay + fit, fast (blue) and slow (red) ROI, one figure per organoid
+%         Fig2D_ADCfit_all.jpg/.eps         the 4 fits side by side
+%         Fig2D_ADCbar.jpg/.eps             bar = mean, error bar = SEM, dots = organoids, paired t-test fast vs slow
+%         Fig2D_ADCR2box.jpg/.eps           box plot of the fit R^2 (fast blue / slow red, as the bar plot), dots = organoids
+%  The script changes to data/Fig2D itself.
 %  =====================================================================
-cd(fullfile(fileparts(mfilename('fullpath')),'..','data','Fig3D'));   % release layout: run in the dataset folder
+cd(fullfile(fileparts(mfilename('fullpath')),'..','data','Fig2D'));   % release layout: run in the dataset folder
 clc; clear; close all;
 
 %% ---------------- 0. settings ----------------------------------------------------
-csvFile = 'Fig3D_input_signals.csv';  adcFile = 'Fig3D_input_sheetADC.csv';
+csvFile = 'Fig2D_input_signals.csv';  adcFile = 'Fig2D_input_sheetADC.csv';
 % organoid name and ROI names; signals are the rows of csvFile for that organoid
 D = struct('name',{'Organoid 1','Organoid 2','Organoid 3','Organoid 4'}, ...
            'roi',{{'ROI 1','ROI 2'},{'ROI 1','ROI 2'},{'left sample','right sample'},{'ROI 1','ROI 2'}});
 excelADC = readmatrix(adcFile);   % typed ADC values (10^-4 mm^2/s), [fast slow] per organoid
 useExcelADC = false;        % bar plot: false = the ADC fitted here (default, = the table), true = the values typed in the sheet
-colF = [0 0 1];  colS = [1 0 0];     % fast = blue, slow = red (as Fig. 3D in Final Figures.pptx)
+colF = [0 0 1];  colS = [1 0 0];     % fast = blue, slow = red (as Fig. 2D in Final Figures.pptx)
 fs = 16;  axLW = 2;                  % font size (pt, Arial bold), axis line width
 sigScale = 1e4;                      % signal axis in 10^4 a.u.
 sigYLim = [0 2.5];  sigYTick = 0:0.5:2.5;   % same signal axis on all fit plots
@@ -51,7 +51,7 @@ for o = 1:nO
             D(o).name, D(o).roi{ord(1)}, ADC(o,1), R2(o,1), D(o).roi{ord(2)}, ADC(o,2), R2(o,2), excelADC(o,:));
 end
 T = cell2table(rows, 'VariableNames',{'organoid','ROI','class','ADC_1e-4mm2s','ADC_CI95lo','ADC_CI95hi','R2','ADC_sheet_1e-4mm2s','n_b','b_min','b_max'});
-writetable(T, 'Fig3D_ADC_table.csv');  writetable(T, 'Fig3D_ADC_table.xlsx', 'WriteMode','replacefile');
+writetable(T, 'Fig2D_ADC_table.csv');  writetable(T, 'Fig2D_ADC_table.xlsx', 'WriteMode','replacefile');
 disp(T(:,[1:4 7 8]));
 fprintf('mean +/- SD (n = %d):  fast ADC %.2f +/- %.2f, R^2 %.4f +/- %.4f | slow ADC %.2f +/- %.2f, R^2 %.4f +/- %.4f\n', ...
         nO, mean(ADC(:,1)), std(ADC(:,1)), mean(R2(:,1)), std(R2(:,1)), mean(ADC(:,2)), std(ADC(:,2)), mean(R2(:,2)), std(R2(:,2)));
@@ -74,13 +74,13 @@ for o = 1:nO
         styleAx(ax, axLW);
         if pass == 1
             fontsize(fo1,fs,"points");  boldArial(fo1);
-            print(fo1, sprintf('Fig3D_ADCfit_Organoid%d.jpg',o), '-djpeg','-r300');  print(fo1, sprintf('Fig3D_ADCfit_Organoid%d.eps',o), '-depsc','-r300');
+            print(fo1, sprintf('Fig2D_ADCfit_Organoid%d.jpg',o), '-djpeg','-r300');  print(fo1, sprintf('Fig2D_ADCfit_Organoid%d.eps',o), '-depsc','-r300');
             close(fo1);
         end
     end
 end
 figure(fAll);  fontsize(fAll,fs,"points");  boldArial(fAll);
-print(fAll, 'Fig3D_ADCfit_all.jpg', '-djpeg','-r300');  print(fAll, 'Fig3D_ADCfit_all.eps', '-depsc','-r300');
+print(fAll, 'Fig2D_ADCfit_all.jpg', '-djpeg','-r300');  print(fAll, 'Fig2D_ADCfit_all.eps', '-depsc','-r300');
 
 %% ---------------- 3. bar plot: fast vs slow ADC --------------------------------------
 V = ADC;  if useExcelADC, V = excelADC; end
@@ -101,9 +101,9 @@ xlim([0.4 2.6]);  ylim([0 yTop]);  yticks(0:ternary(yTop>6,2,1):yTop);
 xticks(1:2);  xticklabels({'Fast','Slow'});  ylabel('ADC (10^{-4} mm^2/s)');
 fontsize(fb,fs,"points");  styleAx(gca, axLW);  boldArial(fb);
 ht.FontSize = fs+6;                                           % significance stars
-print(fb, 'Fig3D_ADCbar.jpg', '-djpeg','-r300');  print(fb, 'Fig3D_ADCbar.eps', '-depsc','-r300');
+print(fb, 'Fig2D_ADCbar.jpg', '-djpeg','-r300');  print(fb, 'Fig2D_ADCbar.eps', '-depsc','-r300');
 
-%% ---------------- 4. box plot of the fit R^2 (as R2bi_ROIbox_fig4 of 0518) ----------------------
+%% ---------------- 4. box plot of the fit R^2 (as R2bi_ROIbox_fig3 of 0518) ----------------------
 fr = figure('Position',[100 100 340 340],'Color','w');
 xg = [ones(nO,1); 2*ones(nO,1)];  yg = [R2(:,1); R2(:,2)];
 hold on;  cols = [colF; colS];                               % fast = blue, slow = red, as the ADC bar plot
@@ -115,8 +115,8 @@ yl = [floor(min(yg)*100)/100 1];  ylim(yl);  yticks(fewTicks(yl,4));
 xticks(1:2);  xticklabels({'Fast','Slow'});  xlim([0.4 2.6]);  ylabel('R^2');
 fontsize(fr,fs,"points");  styleAx(gca, axLW);  boldArial(fr);
 for k = 1:2, fprintf('%s: R^2 median = %.4f, 25-75%% = [%.4f %.4f], min %.4f\n', ternary(k==1,'fast','slow'), median(R2(:,k)), prctile(R2(:,k),[25 75]), min(R2(:,k))); end
-print(fr, 'Fig3D_ADCR2box.jpg', '-djpeg','-r300');  print(fr, 'Fig3D_ADCR2box.eps', '-depsc','-r300');
-fprintf('wrote Fig3D_ADC_table.csv/.xlsx, Fig3D_ADCfit_*.jpg/.eps, Fig3D_ADCbar.jpg/.eps, Fig3D_ADCR2box.jpg/.eps\n');
+print(fr, 'Fig2D_ADCR2box.jpg', '-djpeg','-r300');  print(fr, 'Fig2D_ADCR2box.eps', '-depsc','-r300');
+fprintf('wrote Fig2D_ADC_table.csv/.xlsx, Fig2D_ADCfit_*.jpg/.eps, Fig2D_ADCbar.jpg/.eps, Fig2D_ADCR2box.jpg/.eps\n');
 
 %% ================= local functions ===================================================
 function s = ternary(c,a,b), if c, s = a; else, s = b; end, end

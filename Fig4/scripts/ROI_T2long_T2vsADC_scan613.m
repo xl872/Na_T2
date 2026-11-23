@@ -1,23 +1,23 @@
 %% =====================================================================
 %  ROI_T2long_T2vsADC.m      (2026-09-21; successor of ROI_ADChighlow_T2vsADC.m)
 %  ADC vs sodium T2* (short = T2f, long = T2s) for two ROIs that are defined ON THE T2* LONG MAP and consist of
-%  WHOLE SODIUM VOXELS (16x16x16 @ 0.40 mm).  Every voxel that enters the statistics therefore has ONE T2* value and
+%  WHOLE SODIUM VOXELS.  Every voxel that enters the statistics therefore has ONE T2* value and
 %  ONE ADC value, no sodium voxel is split between ROIs and no coverage cut of a hand-drawn proton ROI is needed.
 %
 %  INPUTS
-%    this folder    : ROI_shrink_notop+orig = the DWI ROI (proton grid; ROI_shrink without its top row, written by alignT2toDTI175.m).  It alone defines the organoid area, for the ADC
-%                                        and for the T2* maps (the same ROI masks the three maps of alignT2toDTI175.m 6b)
+%    this folder    : ROI_shrink+orig  = the DWI ROI (proton grid).  It alone defines the organoid area, for the ADC
+%                                        and for the T2* maps (the same ROI masks the three maps of alignT2toDTI613New.m 6b)
 %                     ADC+orig, allave+orig, ROI+orig (anatomy / zoom box of the maps)
-%                     T2_to_175_xform.mat     (alignT2toDTI175.m step 4; header-only alignment, no manual shift)
-%                     T2s_on175+orig          (step 5a; consistency check only)
+%                     T2_to_613New_xform.mat  (alignT2toDTI613New.m step 4, including extraShift_mm)
+%                     T2s_on613New+orig       (step 5a; consistency check only)
 %                     ADC_R2+orig             (myADCProt.m: R^2 = gof.rsquare of the voxel-wise ADC fit, proton grid)
-%    ../Na23_scan142-160   : T2f, T2s, T2 +orig  (T2estimate.m, whole-matrix fit since 2026-09-21, ms), allave+orig (grid info)
-%                     T2R2bi, T2R2mono +orig   (T2estimate.m: R^2 = gof.rsquare of the voxel-wise biexponential / mono-exponential fit)
-%                     ROI_T2longhigh+orig, ROI_T2longlow+orig   only for roiSource = 'file' (drawn in AFNI on T2s)
+%    ../Na23_scan402-418 : T2allf, T2alls, T2all +orig  (T2estimate.m, whole-matrix fit, ms), allave+orig (grid info)
+%                     T2allR2bi, T2allR2mono +orig   (T2estimate.m: R^2 = gof.rsquare of the voxel-wise biexponential / mono-exponential fit)
+%                     ROI_T2longhigh+orig, ROI_T2longlow+orig   only for roiSource = 'file' (drawn in AFNI on T2alls)
 %
 %  METHOD
 %    1. every DWI-ROI proton voxel is sent to its nearest sodium voxel with the stored transform (exactly how the
-%       T2*_on175 maps were made).  Per sodium voxel: coverage = fraction of its ~16 proton voxels that belong to the
+%       T2*_on613New maps were made).  Per sodium voxel: coverage = fraction of its ~27 proton voxels that belong to the
 %       DWI ROI, ADC = mean ADC of those voxels (box average).
 %       sliceOnly = true (default): ONLY the proton slice kk that is shown in the maps is used - the DWI-ROI voxels of that
 %       slice, the sodium voxels seen in it, and the in-plane coverage on that slice.  The ROIs, the dots and the statistics
@@ -38,7 +38,7 @@
 %    4. per ROI and quantity: mean, SD, SE = SD/sqrt(n); two-sample t-test high vs low.
 %       T2* (short, long, mono): one value per SODIUM voxel, n = sodium voxels.
 %       ADC with adcUnit = 'proton' (default): one value per ADC-grid (proton) voxel of the DWI ROI inside the ROI's sodium
-%       voxels, n = proton voxels - so a ROI of one sodium voxel still has ~16 ADC values, a mean and an error bar.  The plot
+%       voxels, n = proton voxels - so a ROI of one sodium voxel still has ~27 ADC values, a mean and an error bar.  The plot
 %       shows every ADC-grid voxel as a transparent dot (x = its own ADC, y = T2* of the sodium voxel it lies in) and the
 %       mean +/- SE on top.  Neighbouring ADC voxels are NOT independent (smoothed DWI, same tissue), so the per-voxel ADC
 %       p value is too small; 'ADCbox' (one box-averaged ADC per sodium voxel, as before) is kept in the tables for reference.
@@ -58,21 +58,21 @@
 %                     ROI_T2long_T2vsADC_stats.csv / _ttest.csv,  ROI_T2long_sodiumvoxels.csv (all eligible voxels)
 %                        (the stats CSV also holds the fit-quality rows ADC_R2, T2bi_R2, T2mono_R2; the voxel CSV the R^2 per voxel)
 %                     ROI_T2longhigh+orig, ROI_T2longlow+orig    the ROIs on the proton grid (DWI-ROI voxels of those sodium voxels)
-%    ../Na23_scan142-160   : ROIlabel_T2long_on142grid+orig       1 = T2* long high, 2 = low, 3 = eligible but unused
+%    ../Na23_scan402-418 : ROIlabel_T2long_on402grid+orig       1 = T2* long high, 2 = low, 3 = eligible but unused
 %
-%  Run after alignT2toDTI175.m (the script changes to data/DWI_scan175 itself), cell by cell (Ctrl+Enter) or as a whole.
+%  Run after alignT2toDTI613New.m (the script changes to data/DWI_scan613 itself), cell by cell (Ctrl+Enter) or as a whole.
 %  =====================================================================
-cd(fullfile(fileparts(mfilename('fullpath')),'..','data','DWI_scan175'));   % release layout: run in the dataset folder
+cd(fullfile(fileparts(mfilename('fullpath')),'..','data','DWI_scan613'));   % release layout: run in the dataset folder
 addpath(fullfile(fileparts(mfilename('fullpath')),'..','..','helper'));   % release layout: readT2Bounds.m
 clc; clear; close all;
 
 %% ---------------- 0. settings ----------------------------------------------------
-here = pwd;  T2D = fullfile(fileparts(pwd),'Na23_scan142-160');
-orgName   = 'Fig. 5 #2, scan 175';   orgShort = 'Fig. 5 #2 (175)';   % console / figure title
-xformFile = 'T2_to_175_xform.mat';   chkFile = 'T2s_on175';   gridTag = '142grid';
-dwiROI    = 'ROI_shrink_notop';   % the DWI ROI in this folder (proton grid) = ROI_shrink without its top row (trimTopRows of alignT2toDTI175.m), as in its maps
-T2names   = {'T2f','T2s','T2'};   whichFit = 'last';   % fast, slow, mono maps in T2D + their fit in T2estimate.m
-R2names   = {'T2R2bi','T2R2mono'};   % R^2 maps of those fits in T2D (T2estimate.m, gof.rsquare): biexponential, mono-exponential
+here = pwd;  T2D = fullfile(fileparts(pwd),'Na23_scan402-418');
+orgName   = 'Fig. 4 #1, scan 613';   orgShort = 'Fig. 4 #1 (613)';   % console / figure title
+xformFile = 'T2_to_613New_xform.mat';   chkFile = 'T2s_on613New';   gridTag = '402grid';
+dwiROI    = 'ROI_shrink';   % the DWI ROI in this folder (proton grid); the same one alignT2toDTI613New.m uses for its maps
+T2names   = {'T2allf','T2alls','T2all'};   whichFit = 'last';   % fast, slow, mono maps in T2D + their fit in T2estimate.m
+R2names   = {'T2allR2bi','T2allR2mono'};   % R^2 maps of those fits in T2D (T2estimate.m, gof.rsquare): biexponential, mono-exponential
 adcR2name = 'ADC_R2';       % R^2 map of the voxel-wise ADC fit in this folder (myADCProt.m, gof.rsquare)
 roiSource = 'centre';       % 'centre' = central highest T2* long voxel vs the ring of its in-plane neighbours (see METHOD 3);
                             % 'auto' = split the eligible sodium voxels by T2* long (splitMode);  'file' = roiFilesT
@@ -81,23 +81,23 @@ centreSlices = [];          % roiSource 'centre': sodium slices (k, 1-based) to 
 centreVox = [];             %   centre voxel per slice as rows [i j k] (1-based sodium indices); [] = automatic (see centreRad)
 ringMinCov = 0.25;          %   ring voxels: DWI-ROI coverage needed (lower than minCov: the corner voxels of the ring reach the rim,
                             %   e.g. the bottom-left one of scan 613 is covered 0.33); only their DWI-ROI part enters the ADC
-centreRad = Inf;            % (Inf = the highest T2* long voxel of the whole shown slice; it is not at the centre here)  %   automatic centre = highest T2* long among the eligible voxels within this in-plane distance
+centreRad = 1.0;            %   automatic centre = highest T2* long among the eligible voxels within this in-plane distance
                             %   (sodium voxels) of the DWI-ROI centroid
 roiFilesT = {'ROI_T2longhigh','ROI_T2longlow'};   % sodium-grid ROIs in T2D (read for roiSource = 'file'); also the names
                                                   % of the proton-grid ROI datasets written into this folder
 roiLabels = {'T2* long high','T2* long low'};
 minCov    = 0.5;            % sodium voxel belongs to the organoid when the DWI ROI covers at least this fraction of it
 dropOwnBound = true;        % T2* short: drop sodium voxels whose T2f sits on its fit bound (T2* long bound voxels are not eligible)
-T2fBounds = [];  T2sBounds = [];   % [] = read from T2estimate_scan142_160.m with readT2Bounds.m; or e.g. [0 5] / [5 50]
-boundTol  = 0.01;           % "on a bound" = within this distance (ms); with a lower bound of 0 the fit returns values like 0.002 ms
+T2fBounds = [];  T2sBounds = [];   % [] = read from T2estimate_scan402_418.m with readT2Bounds.m; or e.g. [0.1 2] / [2 50]
+boundTol  = 1e-6;           % "on a bound" = within this distance (ms) of a bound
 vartype   = 'equal';        % t-test: 'equal' = ordinary two-sample (Student) t-test (default); 'unequal' = Welch
 adcUnit   = 'proton';       % 'proton' = ADC statistics and dots per ADC-grid (proton) voxel; 'sodium' = per sodium voxel (box average)
 showVoxels = true;          % draw the individual voxels (adcUnit) as transparent dots behind the mean +/- SE
 dotSize = 30;  dotAlpha = 0.30;     % size / opacity of those dots
 errBar    = 'SE';           % error bars of the mean: 'SE' (= SD/sqrt(n), as on the earlier pages) or 'SD'
-kk        = 21;             % coronal proton slice of the ROI map (the slice of alignT2toDTI175.m 6b)
+kk        = 14;             % coronal proton slice of the ROI map (the slice of alignT2toDTI613New.m 6b)
 sliceOnly = true;           % true = analyse ONLY proton slice kk (ROIs, dots and statistics match the maps shown); false = all slices
-mapMargin = 3;              % ROI map zoom: organoid ROI box + this many proton voxels, as in alignT2toDTI175.m 6b; [] = full FOV
+mapMargin = 3;              % ROI map zoom: organoid ROI box + this many proton voxels, as in alignT2toDTI613New.m 6b; [] = full FOV
 mapAlpha  = 1;              % opacity of the ROI colour fill (1 = solid)
 col = [0.165 0.471 0.839;   % T2* long high : blue
        0.922 0.408 0.204];  % T2* long low  : orange
@@ -130,7 +130,7 @@ fprintf('%s\nproton grid %dx%dx%d @ %.2f mm, sodium grid %dx%dx%d @ %.2f mm; tra
 fprintf('DWI ROI %s: %d proton voxels (%.2f mm^3 = %.1f sodium-voxel volumes), %d without an ADC fit\n', ...
         dwiROI, nnz(roiD), nnz(roiD)*resD^3, nnz(roiD)*resD^3/resT^3, nnz(roiD & adc<=0));
 if isempty(T2fBounds) || isempty(T2sBounds)
-    [T2fBounds, T2sBounds, bnd] = readT2Bounds(fullfile('..','..','scripts','T2estimate_scan142_160.m'), whichFit);
+    [T2fBounds, T2sBounds, bnd] = readT2Bounds(fullfile('..','..','scripts','T2estimate_scan402_418.m'), whichFit);
     fprintf('fit bounds read from T2estimate.m line %d (%s): T2f [%g %g], T2s [%g %g] ms\n', bnd.line, bnd.model, T2fBounds, T2sBounds);
 end
 % the R^2 maps must come from the same fits as the parameter maps: same voxels, and not older than them
@@ -146,14 +146,14 @@ onBs = abs(T2s-T2sBounds(1))<boundTol | abs(T2s-T2sBounds(2))<boundTol;    % T2s
 hasFit = T2s(:) > 0 & T2m(:) > 0;                                           % sodium voxels with a fit
 
 %% ---------------- 2. DWI ROI and ADC onto the sodium grid -------------------------------
-%  every proton voxel -> nearest sodium voxel (same transform that made T2*_on175)
+%  every proton voxel -> nearest sodium voxel (same transform that made T2*_on613New)
 [I,J,K] = ndgrid(0:ND(1)-1, 0:ND(2)-1, 0:ND(3)-1);
 tq = M*[I(:)'; J(:)'; K(:)'; ones(1,numel(I))];  tr = round(tq(1:3,:));  clear I J K tq
 in = (all(tr>=0,1) & tr(1,:)<=NT(1)-1 & tr(2,:)<=NT(2)-1 & tr(3,:)<=NT(3)-1)';
 lin = zeros(numel(in),1);  lin(in) = sub2ind(NT, tr(1,in)+1, tr(2,in)+1, tr(3,in)+1);  clear tr
 inS = in;                                                            % proton voxels that take part
 if sliceOnly, [~,~,kpAll] = ind2sub(ND,(1:prod(ND))');  inS = in & kpAll == kk;  clear kpAll; end      % ... only those of the shown slice
-cntAll = accumarray(lin(inS), 1, [prod(NT) 1]);                      % proton voxels per sodium voxel (~16)
+cntAll = accumarray(lin(inS), 1, [prod(NT) 1]);                      % proton voxels per sodium voxel (~27)
 chk = double(BrikLoad(fullfile(here,[chkFile '+orig.BRIK'])));      % consistency with the maps of the alignment script
 d = max(abs(chk(in) - T2s(lin(in))));
 if d > 1e-3, warning('%s differs from the stored transform / %s (max %.3g ms) - rerun the alignment script, steps 4-5', chkFile, T2names{2}, d); end
@@ -366,7 +366,7 @@ fprintf('  wrote ROI_T2long_T2vsADC.jpg / .eps\n');
 
 %% ---------------- 6. map: where the two ROIs are (proton grid, slice kk) ----------------------
 %  grey proton anatomy with each ROI as a solid colour fill (blue = T2* long high, orange = low), no colour bar.
-%  The fills are whole sodium voxels (2.5 x 2.5 proton voxels in plane) clipped by the DWI ROI.
+%  The fills are whole sodium voxels (3x3 proton voxels in plane) clipped by the DWI ROI.
 [bi,bj] = ind2sub(ND(1:2), find(any(roiBox,3)));
 figure('Name','ROI maps (proton grid)','Position',[50 50 600 300],'Color','w');
 for r = 1:nR

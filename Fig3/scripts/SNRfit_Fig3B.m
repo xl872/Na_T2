@@ -1,9 +1,9 @@
-% Fig. 4B remake (first made in Python): mean SNR of the organoid ROI vs TE with the
+% Fig. 3B remake (first made in Python): mean SNR of the organoid ROI vs TE with the
 % bi-exponential fit c + a*((1-d)*exp(-TE/T2short) + d*exp(-TE/T2long)), for organoid #3 (M1) and #4 (M3).
 % Uses ROIT2estimate2.mat (time, tdata = ROI-mean SNR, result = the fit) written by T2estimate_M1T2.m and
 % T2estimate_M3T2.m - the same data and fit as the "Organoid" plots of T2estimate_metrics.m.
 % Style of the supplementary figures: no grid, left + bottom axes only, thick black axes, black bold Arial, 2-pt curves.
-% Writes SNRfit_Fig4B_3.jpg/.eps and SNRfit_Fig4B_4.jpg/.eps in the data folder (the script changes to it itself).
+% Writes SNRfit_Fig3B_3.jpg/.eps and SNRfit_Fig3B_4.jpg/.eps in the data folder (the script changes to it itself).
 cd(fullfile(fileparts(mfilename('fullpath')),'..','..','data'));   % release layout: run in the dataset folder
 clc;clear;close all;
 folders={'M1','M3'}; labels={'#3','#4'};
@@ -19,8 +19,8 @@ for f=1:2
     xlabel('TE (ms)'); ylabel('SNR'); title(['Organoid ',labels{f}]);
     fontsize(gcf,fs,"points"); styleAx(gca);
     fprintf('Organoid %s (%s): T2*short = %.3f ms, T2*long = %.3f ms, long fraction d = %.3f\n',labels{f},folders{f},S.result.b,S.result.e,S.result.d);
-    print(gcf,[pwd,'/SNRfit_Fig4B_',labels{f}(2:end),'.jpg'],'-djpeg','-r300');
-    print(gcf,[pwd,'/SNRfit_Fig4B_',labels{f}(2:end),'.eps'],'-depsc','-r300');
+    print(gcf,[pwd,'/SNRfit_Fig3B_',labels{f}(2:end),'.jpg'],'-djpeg','-r300');
+    print(gcf,[pwd,'/SNRfit_Fig3B_',labels{f}(2:end),'.eps'],'-depsc','-r300');
 end
 
 %% local functions
